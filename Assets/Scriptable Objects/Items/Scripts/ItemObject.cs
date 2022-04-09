@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum ItemType 
 {
@@ -10,6 +11,7 @@ public enum ItemType
     Shield,
     Boots,
     Chest,
+    Tower,
     Default
 }
 
@@ -25,19 +27,40 @@ public class ItemObject : ScriptableObject
 {
 
     public Sprite uiDisplay;
+    public GameObject characterDisplay;
     public bool stackable;
     public ItemType type;
     [TextArea(15, 20)]
     public string description;
     public Item data = new Item();
 
+    public List<string> boneName = new List<string>();
+
     public Item CreateItem()
     {
         Item newItem = new Item(this);
         return newItem;
+        //if (type == ItemType.Tower)
+        //{
+        //    AddEvent.
+        //}
+
     }
 
+    private void OnValidate()
+    {
+        boneName.Clear();
+        if(characterDisplay == null)
+        {
+            return;
+        }
+        if(!characterDisplay.GetComponent<SkinnedMeshRenderer>())
+        {
+            return;
+        }
+        
 
+    }
 }
 
 [System.Serializable]
@@ -50,6 +73,7 @@ public class Item
     {
         Name = "";
         Id = -1;
+        
     }
     public Item(ItemObject item)
     {
@@ -63,7 +87,9 @@ public class Item
                 attribute = item.data.buffs[i].attribute
             };
         }
+
     }
+    
 }
 
 [System.Serializable]

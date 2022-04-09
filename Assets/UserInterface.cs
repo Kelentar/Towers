@@ -84,7 +84,7 @@ public abstract class UserInterface : MonoBehaviour
         {
             tempItem = new GameObject();
             var rt = tempItem.AddComponent<RectTransform>();
-            rt.sizeDelta = new Vector2(50, 50);
+            rt.sizeDelta = new Vector2(150, 150);
             tempItem.transform.SetParent(transform.parent);
             var img = tempItem.AddComponent<Image>();
             img.sprite = slotsOnInterface[obj].ItemObject.uiDisplay;

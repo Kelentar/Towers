@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
+    public int count;
     
     public GameObject towerObject;
 
@@ -12,6 +13,13 @@ public class Buttons : MonoBehaviour
         get
         {
             return towerObject;
+        }
+    }
+    public void Update()
+    {
+        if(count == 0)
+        {
+            Destroy(gameObject);
         }
     }
 

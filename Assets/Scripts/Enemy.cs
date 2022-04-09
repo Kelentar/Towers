@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
         else if (collision.tag == "final")
         {
             Manager.Instance.removeEnemyFromScreen();
-            cam.transform.position = Vector2.right * 100;
+            //cam.transform.position = Vector2.right * 100;
             
             
         }

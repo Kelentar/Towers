@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class TowerManager : Loader<TowerManager>
 {
+    [SerializeField]
     Buttons towerBtnPressed;
 
     void Update()
@@ -20,8 +21,8 @@ public class TowerManager : Loader<TowerManager>
             {
                 hit.collider.tag = "TowerSideFull";
                 PlaceTower(hit);
+                towerBtnPressed.count--;
 
-                
             }
 
         } // Клік для виставлення турелі
@@ -33,12 +34,13 @@ public class TowerManager : Loader<TowerManager>
         {
             GameObject newTower = Instantiate(towerBtnPressed.TowerObject);
             newTower.transform.position = hit.transform.position;
+            
         }
     } // Івент для виставлення турелі
 
     public void SelectTower(Buttons towerSelected)
     {
-        Debug.Log("Кнопку нажав");
+        
         towerBtnPressed = towerSelected;
     } // Кнопка
 }

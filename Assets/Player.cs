@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     public InventoryObject inventory;
     public InventoryObject equipment;
-    public InventoryObject towers;
+    
 
     public Attribute[] attributes;
 
@@ -92,10 +92,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
-            if (towers.AddItem(_item, 1))
-            {
-                Destroy(collision.gameObject);
-            }
+            
         }
     }
     private void Update()
@@ -104,13 +101,13 @@ public class Player : MonoBehaviour
         {
             inventory.Save();
             equipment.Save();
-            towers.Save();
+            
         }
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             inventory.Load();
             equipment.Load();
-            towers.Load();
+            
         }
     }
 
