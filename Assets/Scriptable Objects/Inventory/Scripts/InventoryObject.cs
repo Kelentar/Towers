@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEditor;
 using System.Runtime.Serialization;
+using System;
 
 public enum InterfaceType
 {
@@ -85,8 +86,8 @@ public class InventoryObject : ScriptableObject
             item1.UpdateSlot(temp.item, temp.amount);
         }
     }
-    
 
+    
     [ContextMenu("Save")]
     public void Save()
     {
@@ -205,4 +206,5 @@ public class InventorySlot
         }
         return false;
     }
+    
 }

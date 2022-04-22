@@ -9,6 +9,10 @@ using System;
 
 public abstract class UserInterface : MonoBehaviour
 {
+    public TowerManager towerManager;
+    public GroundItem item_;
+    public ItemObject item;
+
 
     public InventoryObject inventory;
     public Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
@@ -90,14 +94,30 @@ public abstract class UserInterface : MonoBehaviour
             img.sprite = slotsOnInterface[obj].ItemObject.uiDisplay;
             img.raycastTarget = false;
         }
+        
         return tempItem;
     }
     public void OnDragEnd(GameObject obj)
     {
+        Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePoint, Vector2.zero);
         Destroy(MouseData.tempItemBeingDragged);
-        if (MouseData.interfaceMouseIsOver == null)
+        if (MouseData.interfaceMouseIsOver == null && hit.collider.tag == "TowerSide")
         {
+            
             slotsOnInterface[obj].RemoveItem();
+            //ScriptableObject.CreateInstance(slotsOnInterface[obj]);
+            //Instantiate(tempItem);
+            GameObject tempItem = new GameObject();
+            var rt = tempItem.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(150, 150);
+            tempItem.transform.SetParent(transform.parent);
+            var sprite = tempItem.AddComponent<SpriteRenderer>();
+            tempItem.transform.position = hit.transform.position;
+
+            //newTower.transform.position = hit.transform.position;
+            //obj.collider.tag = "TowerSideFull";
+            //towerManager.PlaceTower(obj);
             return;
         }
         if (MouseData.slotHoveredOver)

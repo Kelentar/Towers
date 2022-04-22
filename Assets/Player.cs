@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
             equipment.Save();
             
         }
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             inventory.Load();
             equipment.Load();

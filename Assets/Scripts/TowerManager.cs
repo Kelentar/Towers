@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class TowerManager : Loader<TowerManager>
 {
+    
     [SerializeField]
     Buttons towerBtnPressed;
 
@@ -21,7 +22,7 @@ public class TowerManager : Loader<TowerManager>
             {
                 hit.collider.tag = "TowerSideFull";
                 PlaceTower(hit);
-                towerBtnPressed.count--;
+
 
             }
 

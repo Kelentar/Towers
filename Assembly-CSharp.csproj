@@ -68,7 +68,6 @@
     <Compile Include="Assets\StaticInterface.cs" />
     <Compile Include="Assets\Scripts\TowerBase.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemObject.cs" />
-    <Compile Include="Assets\Billboard.cs" />
     <Compile Include="Assets\DynamicInterface.cs" />
     <Compile Include="Assets\Scripts\Bullet_2.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />

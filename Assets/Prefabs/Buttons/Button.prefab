@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74761bdee036cb74eb90752200eeb8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerObject: {fileID: 3537001831522267300, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+  towerObject: {fileID: 4485254958323242102, guid: 5fa803d7ba9bf9b47a032ac4fe3e3933, type: 3}
 --- !u!1 &3632043979549800603
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
-    public int count;
+    
     
     public GameObject towerObject;
 
     public GameObject TowerObject
     {
+        
         get
         {
             return towerObject;
         }
+            
     }
-    public void Update()
-    {
-        if(count == 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+    //public void Update()
+    //{
+    //    if (inventory.amount == 0)
+    //    {
+    //        gameObject.GetComponent<Buttons>().enabled = false;
+    //    }
+    //}
 
 
     //public void CreateSlots()
