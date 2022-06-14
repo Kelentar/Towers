@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36c92f6916f51c84180ccd6986ebd922, type: 3}
   m_Name: Sword 1
   m_EditorClassIdentifier: 
-  uiDisplay: {fileID: -6447425667752118579, guid: d07b803c54ae9fb4ebfc1e8a13b12f4c,
-    type: 3}
+  uiDisplay: {fileID: 4694007364678901417, guid: d07b803c54ae9fb4ebfc1e8a13b12f4c, type: 3}
   stackable: 0
   type: 2
   description: 
   data:
     Name: 
-    Id: 10
+    Id: 9
     buffs:
     - attribute: 0
       value: 0
@@ -33,3 +32,4 @@ MonoBehaviour:
       value: 0
       min: 1
       max: 12
+  boneName: []

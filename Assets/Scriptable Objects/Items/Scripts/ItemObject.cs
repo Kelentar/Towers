@@ -12,6 +12,7 @@ public enum ItemType
     Boots,
     Chest,
     Tower,
+    Building,
     Default
 }
 
@@ -22,12 +23,12 @@ public enum Attributes
     Stamina,
     Strength
 }
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory System/Items/item")]
+//[CreateAssetMenu(fileName = "New Item", menuName = "Inventory System/Items/item")]
 public class ItemObject : ScriptableObject
 {
 
     public Sprite uiDisplay;
-    public GameObject characterDisplay;
+   // public GameObject characterDisplay;
     public bool stackable;
     public ItemType type;
     [TextArea(15, 20)]
@@ -50,15 +51,15 @@ public class ItemObject : ScriptableObject
     private void OnValidate()
     {
         boneName.Clear();
-        if(characterDisplay == null)
-        {
-            return;
-        }
-        if(!characterDisplay.GetComponent<SkinnedMeshRenderer>())
-        {
-            return;
-        }
-        
+        //if (characterDisplay == null)
+        //{
+        //    return;
+        //}
+        //if (!characterDisplay.GetComponent<SkinnedMeshRenderer>())
+        //{
+        //    return;
+        //}
+
 
     }
 }

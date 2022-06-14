@@ -1,102 +1,70 @@
-﻿//using UnityEngine;
-
-//public class Manager : MonoBehaviour
-//{
-
-//    public static BuildManager instance;
-
-//    void Awake()
-//    {
-//        if (instance != null)
-//        {
-//            Debug.LogError("More than one BuildManager in scene!");
-//            return;
-//        }
-//        instance = this;
-//    }
-
-//    public GameObject buildEffect;
-//    public GameObject sellEffect;
-
-//    private TurretBlueprint turretToBuild;
-//    private Node selectedNode;
-
-//    public NodeUI nodeUI;
-
-//    public bool CanBuild { get { return turretToBuild != null; } }
-//    public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
-
-//    public void SelectNode(Node node)
-//    {
-//        if (selectedNode == node)
-//        {
-//            DeselectNode();
-//            return;
-//        }
-
-//        selectedNode = node;
-//        turretToBuild = null;
-
-//        nodeUI.SetTarget(node);
-//    }
-
-//    public void DeselectNode()
-//    {
-//        selectedNode = null;
-//        nodeUI.Hide();
-//    }
-
-//    public void SelectTurretToBuild(TurretBlueprint turret)
-//    {
-//        turretToBuild = turret;
-//        DeselectNode();
-//    }
-
-//    public TurretBlueprint GetTurretToBuild()
-//    {
-//        return turretToBuild;
-//    }
-
-//}
-
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
-public class Manager : Loader<Manager>
+public class Manager : MonoBehaviour
 {
     public GameObject spawnPoint;
-    public GameObject[] enemies;
+    public GameObject enemies;
     public int maxEnemiesOnScreen;
     public int totalEnemies;
     public int enemiesPerSpawn;
+    //public UserInterface user;
 
-    int enemiesOnScreen = 0;
+    public float timeBetweenWaves = 10f;
+    public float countdown = 10f;
 
-    const float spawnDelay = 0.5f;
+    [SerializeField]
+    int enemiesOnScreen = 1110;
+
+    public float spawnDelay = 10f;
+
+   
+
+   
 
 
-    void Start()
+
+    private void Update()
     {
-        StartCoroutine(Spawn());
+       
+        //if (gameObject.tag == "BuildingSideFull")
+        //{
+            if (countdown <= 0f)
+            {   
+                StartCoroutine(SpawnWave());
+                countdown = timeBetweenWaves;
+                return;
+            }
+            countdown -= Time.deltaTime;
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
+       // }
+        
     }
 
-    IEnumerator Spawn()
-    {
-        if(enemiesPerSpawn > 0 && enemiesOnScreen < totalEnemies)
-        {
-            for(int i = 0; i < enemiesPerSpawn; i++)
-            {
-                if(enemiesOnScreen < maxEnemiesOnScreen)
-                {
-                    GameObject newEnemy = Instantiate(enemies[0]) as GameObject;
-                    newEnemy.transform.position = spawnPoint.transform.position;
-                    enemiesOnScreen += 1;
-                }
-            }
 
-            yield return new WaitForSeconds(spawnDelay);
-            StartCoroutine(Spawn());
-        }
+    IEnumerator SpawnWave()
+    {
+
+
+        SpawnEnemy();
+        
+            
+        yield return new WaitForSeconds(spawnDelay); 
+        
+
+            
+        
+    }
+     
+    void SpawnEnemy()
+    {
+        GameObject newEnemy = Instantiate(enemies) as GameObject;
+        newEnemy.transform.position = spawnPoint.transform.position;
+ 
+        
+        
+
     }
 
     public void removeEnemyFromScreen()

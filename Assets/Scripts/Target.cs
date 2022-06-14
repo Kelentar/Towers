@@ -9,8 +9,9 @@ public class Target : MonoBehaviour
     [Header("General")]
     public Transform target;
     public Enemy targetEnemy;
+    
 
-    public float range = 15f;
+    public float range;
     public string enemyTag = "Enemy";
     #endregion
 

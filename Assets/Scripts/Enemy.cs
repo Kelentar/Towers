@@ -2,7 +2,9 @@
 
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections;
+
+
 
 public class Enemy : MonoBehaviour
 {
@@ -11,31 +13,45 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float currentHealth;
 
-    
+
 
     Transform enemy;
-    public float navigationTime = 0;
+
+
     #endregion
 
     //------------------------------
 
     #region public
+    public int ID = 0;
+    public float navigationTime = 0;
+    public bool isFlipped = true;
+
     public float slowAmount = .5f;
 
-    public float startSpeed = 0f;
+    public float startSpeed;
     public int target = 0;
     public Transform exit;
     public Transform[] wayPoints;
     public float navigation;
+    public int time;
+    
 
-    [HideInInspector]
-    //public float speed;
+    public Transform[] drop;
+
+    [SerializeField]
+    private GameObject[] items;
+
+
+    public int dropIndex;
+    public int maxRange;
+    
 
     public float startHealth = 100;
 
     public Camera cam;
+    public UserInterface user;
 
-    //public int worth = 50;
 
     public GameObject deathEffect;
 
@@ -46,51 +62,70 @@ public class Enemy : MonoBehaviour
     {
         cam = Camera.main;
         enemy = GetComponent<Transform>();
+        ID = user.ID;
 
-        //--------------------------
 
-        //speed = startSpeed;
+        
+
+        
+        
         currentHealth = startHealth;
     } // Компоненти, хп
-   
 
-    void Update()
-    {
-        if(wayPoints != null)
-        {
-            
-            navigationTime += Time.deltaTime * .8f;
-              
-            
-            
-            if (navigationTime > navigation)
-            {
-                if(target < wayPoints.Length)
-                {
-                    enemy.position = Vector2.MoveTowards(enemy.position, wayPoints[target].position, navigationTime);
-                }else
-                {
-                    enemy.position = Vector2.MoveTowards(enemy.position, exit.position, navigationTime);
-                }
-                navigationTime = 0;
-            }
-        }
-    } // Пересування
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.tag == "waypoint")
         {
+            StartCoroutine(Movement());
+
             target += 1;
+            
         }
         else if (collision.tag == "final")
         {
-            Manager.Instance.removeEnemyFromScreen();
-            //cam.transform.position = Vector2.right * 100;
             
+            GetComponent<Manager>().removeEnemyFromScreen();
+            //cam.transform.position = Vector2.right * 100;
+
+
+        }
+    }
+
+
+    IEnumerator Movement()
+    {
+        yield return new WaitForSeconds(time);
+        if (wayPoints != null)
+        {
+
+            if (target < wayPoints.Length)
+            {
+
+                enemy.position = wayPoints[target].position;
+                if (wayPoints[target - 1].position.x > wayPoints[target].position.x && isFlipped)
+                {
+                    enemy.Rotate(0f, 180f, 0f);
+                    isFlipped = false;
+                }
+
+                else if (wayPoints[target - 1].position.x < wayPoints[target].position.x && !isFlipped)
+                {
+                    enemy.Rotate(0f, 180f, 0f);
+                    isFlipped = true;
+                }
+            }
             
         }
-    } // І це теж
+            else
+            {
+                enemy.position = exit.position;
+                transform.rotation = exit.rotation;
+                
+            }
+        }
+
 
     public void TakeDamage(float damage)
     {
@@ -98,25 +133,40 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0 && !isDead)
         {
-
+            
+            //var spawnPosition = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), -2);
+            //enemy.position = spawnPosition;
             Die();
+            
         }
 
     }
-    //public void Slow(float pct)
-    //{
-    //    //speed = startSpeed * (1f - pct);
-    //    navigationTime = navigationTime * 2 / 3;
-    //}
 
     void Die()
     {
         isDead = true;
 
+        //dropIndex++;
+        //if(dropIndex > Count) dropIndex = 0;
+        int gen = Random.Range(0, maxRange);
+        Instantiate(items[gen], drop[dropIndex].position, Quaternion.identity);
+        Destroy(gameObject);
+        if (items[gen].GetComponentInChildren<Tower>().enabled == true)
+        {
+            items[gen].GetComponentInChildren<Tower>().enabled = false;
+        }
+
+        
+        
+        
         //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         //Destroy(effect, 5f);
 
-        Destroy(gameObject);
+
     }
+    
+
+ 
+
 
 }

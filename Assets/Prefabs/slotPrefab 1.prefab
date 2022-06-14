@@ -125,12 +125,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
+        m_MethodName: SelectTower
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: -6822068608661883224}
+          m_ObjectArgumentAssemblyTypeName: Buttons, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -161,7 +161,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74761bdee036cb74eb90752200eeb8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerObject: {fileID: 4485254958323242102, guid: 5fa803d7ba9bf9b47a032ac4fe3e3933, type: 3}
+  buildingObject1:
+  - {fileID: 4774972769551942364, guid: 2b638eb3c576f84479748aa35b08493e, type: 3}
+  - {fileID: 4774972769551942364, guid: 3d2084ee8e65ff94d92fcf95acaee42b, type: 3}
+  - {fileID: 4774972769551942364, guid: 0bc813bc65f5e5c42adc5139b2e21934, type: 3}
+  - {fileID: 2134915789234965055, guid: eae123224dbb39247baf45ee080f1c6e, type: 3}
+  - {fileID: 2134915789234965055, guid: 3360b5f0f564ac6478821cf102e4d874, type: 3}
+  - {fileID: 8274430217969489819, guid: 268873c191896f645863fdb61f9b3329, type: 3}
+  - {fileID: 8274430217969489819, guid: 92338833f089e2945954dac236196e02, type: 3}
+  - {fileID: 8274430217969489819, guid: deed7fe14c1eed34982fd58cfe06ff37, type: 3}
+  - {fileID: 8274430217969489819, guid: a86a4fb48c640c7418f405bc47d11185, type: 3}
+  - {fileID: 8274430217969489819, guid: 9269e5d5466494a4cb314ee330491e46, type: 3}
+  - {fileID: 8274430217969489819, guid: c48b3f9f17bf8364fa9a3a926c63f5b5, type: 3}
+  - {fileID: 8274430217969489819, guid: 51cb5ebca31d346498f70c7b0324c2ed, type: 3}
+  - {fileID: 8274430217969489819, guid: a13d3461eb81d7548a2da01ad3400852, type: 3}
+  - {fileID: 8274430217969489819, guid: f0634ace33b10db4e8ac3e562f6d4e60, type: 3}
+  - {fileID: 8274430217969489819, guid: f1f8626deb620364fa5590d766a531d9, type: 3}
+  - {fileID: 277716293556688947, guid: 8b7f77fdc5c31aa4091148fedd7515c9, type: 3}
+  - {fileID: 277716293556688947, guid: 44d57116ba8cf7e40a936e307cb11b0f, type: 3}
+  - {fileID: 277716293556688947, guid: f163fe278ea0f794bb4841829860d7df, type: 3}
+  buildingObject: {fileID: 4774972769551942364, guid: 3d2084ee8e65ff94d92fcf95acaee42b, type: 3}
+  user: {fileID: 0}
 --- !u!1 &3875736137444020442
 GameObject:
   m_ObjectHideFlags: 0

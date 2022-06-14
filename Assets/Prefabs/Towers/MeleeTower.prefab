@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &277716293556688947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277716293556688946}
+  - component: {fileID: 277716293556688948}
+  - component: {fileID: 277716293556688949}
+  m_Layer: 0
+  m_Name: MeleeTower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277716293556688946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277716293556688947}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4588755476963291134}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277716293556688948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277716293556688947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bb9513e57598344792267109fcf975d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 184899ab28e69db4dbd645601d7bf116, type: 2}
+--- !u!58 &277716293556688949
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277716293556688947}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
+--- !u!1001 &2475424172924372905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 277716293556688946}
+    m_Modifications:
+    - target: {fileID: 88706744047940571, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 07c6a52ebfde9ff439b8a0591404d29b, type: 2}
+    - target: {fileID: 2013734641250308323, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647208266155286151, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2934422873357841234, guid: d07b803c54ae9fb4ebfc1e8a13b12f4c, type: 3}
+    - target: {fileID: 2647208266155286151, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537001831522267300, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_Name
+      value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231110882906181097, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+      propertyPath: useBullets_1_2
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+--- !u!4 &4588755476963291134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
+  m_PrefabInstance: {fileID: 2475424172924372905}
+  m_PrefabAsset: {fileID: 0}

@@ -9,10 +9,14 @@ using System;
 
 public abstract class UserInterface : MonoBehaviour
 {
-    public TowerManager towerManager;
-    public GroundItem item_;
-    public ItemObject item;
+    public int ID;
 
+    
+
+
+    public Tower tower;
+    public TowerManager towerManager;
+    
 
     public InventoryObject inventory;
     public Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
@@ -45,11 +49,7 @@ public abstract class UserInterface : MonoBehaviour
         }
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    slotsOnInterface.UpdateSlotDisplay();
-    //}
+
     public abstract void CreateSlots();
 
     protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
@@ -79,6 +79,7 @@ public abstract class UserInterface : MonoBehaviour
     }
     public void OnDragStart(GameObject obj)
     {
+        
         MouseData.tempItemBeingDragged = CreateTempItem(obj);
     }
     public GameObject CreateTempItem(GameObject obj)
@@ -93,6 +94,8 @@ public abstract class UserInterface : MonoBehaviour
             var img = tempItem.AddComponent<Image>();
             img.sprite = slotsOnInterface[obj].ItemObject.uiDisplay;
             img.raycastTarget = false;
+            
+
         }
         
         return tempItem;
@@ -101,31 +104,45 @@ public abstract class UserInterface : MonoBehaviour
     {
         Vector2 mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePoint, Vector2.zero);
+        
         Destroy(MouseData.tempItemBeingDragged);
-        if (MouseData.interfaceMouseIsOver == null && hit.collider.tag == "TowerSide")
-        {
-            
-            slotsOnInterface[obj].RemoveItem();
-            //ScriptableObject.CreateInstance(slotsOnInterface[obj]);
-            //Instantiate(tempItem);
-            GameObject tempItem = new GameObject();
-            var rt = tempItem.AddComponent<RectTransform>();
-            rt.sizeDelta = new Vector2(150, 150);
-            tempItem.transform.SetParent(transform.parent);
-            var sprite = tempItem.AddComponent<SpriteRenderer>();
-            tempItem.transform.position = hit.transform.position;
 
-            //newTower.transform.position = hit.transform.position;
-            //obj.collider.tag = "TowerSideFull";
-            //towerManager.PlaceTower(obj);
+        
+        
+        if (MouseData.interfaceMouseIsOver == null && (hit.collider.tag == "TowerSide" || hit.collider.tag == "BuildingSide"))
+        {
+            if (slotsOnInterface[obj].amount > 0 && (slotsOnInterface[obj].item.Id >= 15 && slotsOnInterface[obj].item.Id <= 17))
+            {
+                ID = slotsOnInterface[obj].item.Id;
+                slotsOnInterface[obj].RemoveItem();
+                hit.collider.tag = "TowerSideFull";
+                towerManager.PlaceBuilding(hit);
+                tower.enabled = true;
+            }
+            else if (slotsOnInterface[obj].amount > 0 && (slotsOnInterface[obj].item.Id >= 0 && slotsOnInterface[obj].item.Id <= 2))
+            {
+                ID = slotsOnInterface[obj].item.Id;
+                slotsOnInterface[obj].RemoveItem();
+                hit.collider.tag = "BuildingSideFull";
+                
+                towerManager.PlaceBuilding(hit);
+                //manager.StartSpawn();
+            }
             return;
         }
+    
+            
+    
+            
+            
         if (MouseData.slotHoveredOver)
         {
             InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHoveredOver];
             inventory.SwapItems(slotsOnInterface[obj], mouseHoverSlotData);
         }
     }
+    
+
     public void OnDrag(GameObject obj)
     {
         if (MouseData.tempItemBeingDragged != null)
@@ -160,6 +177,7 @@ public static class ExtensionMethods
                 _slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0);
                 _slot.Key.GetComponentInChildren<TextMeshProUGUI>().text = "";
             }
+            
         }
     }
 }
