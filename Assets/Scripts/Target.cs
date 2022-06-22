@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
     [Header("General")]
     public Transform target;
     public Enemy targetEnemy;
-    
+    public Animator anim;
 
     public float range;
     public string enemyTag = "Enemy";
@@ -32,11 +32,13 @@ public class Target : MonoBehaviour
 
         if (nearestEnemy != null && shortestDistance <= range)
         {
+            anim.SetBool("Melle", true);
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {
+            anim.SetBool("Melle", false);
             target = null;
         }
 

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: -4795363162621231457, guid: 97e3a5bfb9afacd4383bb897faf5c1fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,6 +136,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  items:
+  - {fileID: 8274430217969489819, guid: f0634ace33b10db4e8ac3e562f6d4e60, type: 3}
+  - {fileID: 2134915789234965055, guid: 3360b5f0f564ac6478821cf102e4d874, type: 3}
+  - {fileID: 8274430217969489819, guid: 268873c191896f645863fdb61f9b3329, type: 3}
+  - {fileID: 4774972769551942364, guid: 3d2084ee8e65ff94d92fcf95acaee42b, type: 3}
+  - {fileID: 4774972769551942364, guid: 2b638eb3c576f84479748aa35b08493e, type: 3}
+  - {fileID: 8274430217969489819, guid: a13d3461eb81d7548a2da01ad3400852, type: 3}
+  - {fileID: 8274430217969489819, guid: 9269e5d5466494a4cb314ee330491e46, type: 3}
+  - {fileID: 277716293556688947, guid: 44d57116ba8cf7e40a936e307cb11b0f, type: 3}
+  startHealth: 150
   navigationTime: 1
   isFlipped: 0
   slowAmount: 0.5
@@ -215,8 +225,6 @@ MonoBehaviour:
   - {fileID: 8495239512416342171, guid: cc1e0f3930daf5846b8711c23d70359d, type: 3}
   - {fileID: 8495239512416342171, guid: 10d7a91920abcf74ab1a92854a3ce47f, type: 3}
   - {fileID: 8495239512416342171, guid: 5f220050f9f01a3468cf87724f3a3bd1, type: 3}
-  navigation: 0.01
-  time: 2
   drop:
   - {fileID: 3284741802219181681, guid: a1ba5373d19793a41a4601b577e8ad5e, type: 3}
   - {fileID: 4783564914729979449, guid: 33dfbd5e052d6264fbcfe168f0ada3e1, type: 3}
@@ -236,21 +244,14 @@ MonoBehaviour:
   - {fileID: 3232222856242249754, guid: 7956ac3f5d54aca4b990c96733b5b7ac, type: 3}
   - {fileID: 7771053555754007489, guid: 0b6b1e16f84e81145b77a2f826e86739, type: 3}
   - {fileID: 754369726107783721, guid: 71dad8d5e857828418dccec85a20abed, type: 3}
-  items:
-  - {fileID: 8274430217969489819, guid: f0634ace33b10db4e8ac3e562f6d4e60, type: 3}
-  - {fileID: 2134915789234965055, guid: 3360b5f0f564ac6478821cf102e4d874, type: 3}
-  - {fileID: 8274430217969489819, guid: 268873c191896f645863fdb61f9b3329, type: 3}
-  - {fileID: 4774972769551942364, guid: 3d2084ee8e65ff94d92fcf95acaee42b, type: 3}
-  - {fileID: 4774972769551942364, guid: 2b638eb3c576f84479748aa35b08493e, type: 3}
-  - {fileID: 8274430217969489819, guid: a13d3461eb81d7548a2da01ad3400852, type: 3}
-  - {fileID: 8274430217969489819, guid: 9269e5d5466494a4cb314ee330491e46, type: 3}
-  - {fileID: 277716293556688947, guid: 44d57116ba8cf7e40a936e307cb11b0f, type: 3}
-  dropIndex: 0
-  maxRange: 7
-  startHealth: 150
   cam: {fileID: 2027052203740821247, guid: 3364e4edd8e53be42ac076e0641c32ee, type: 3}
+  user: {fileID: 0}
   deathEffect: {fileID: 0}
   healthBar: {fileID: 0}
+  navigation: 0.01
+  time: 2
+  dropIndex: 0
+  maxRange: 7
 --- !u!95 &-6122413067707310594
 Animator:
   serializedVersion: 3

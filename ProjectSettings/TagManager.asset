@@ -8,9 +8,10 @@ TagManager:
   - TowerSide
   - Enemy
   - waypoint
-  - final
   - BuildingSide
   - BuildingSideFull
+  - final
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - TowerSide
-  - 
+  - Player
   - 
   - 
   - 

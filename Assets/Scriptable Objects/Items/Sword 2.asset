@@ -23,9 +23,9 @@ MonoBehaviour:
     - attribute: 0
       value: 0
       min: 1
-      max: 100
-    - attribute: 1
+      max: 2
+    - attribute: 3
       value: 0
       min: 1
-      max: 100
+      max: 14
   boneName: []

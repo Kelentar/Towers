@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6949399806113559537}
   - component: {fileID: 8533294293740465253}
+  - component: {fileID: 1323998335837136236}
   m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -43,10 +44,10 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5066956647109825266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -73,6 +74,19 @@ PolygonCollider2D:
       - {x: 2.5205314, y: 1.2825605}
       - {x: 2.4905405, y: 2.3864496}
       - {x: 1.691823, y: 3.5771093}
+--- !u!114 &1323998335837136236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066956647109825266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32003b0ad6770b0428f7137a7fb6d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!1 &5992707515219088859
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +104,7 @@ GameObject:
   - component: {fileID: 885817916382175754}
   m_Layer: 0
   m_Name: ThirdPersonController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +118,7 @@ RectTransform:
   m_GameObject: {fileID: 5992707515219088859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 6949399806113559537}
   m_Father: {fileID: 0}
@@ -183,10 +197,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2283677420253840375}
-  rb: {fileID: 2190466993602200150}
-  moveSpeed: 5
-  inventory: {fileID: 11400000, guid: ba391aef18194db419840aa8245becc2, type: 2}
-  equipment: {fileID: 11400000, guid: 43835e75255697f44b8c11400e3fd98a, type: 2}
   attributes:
   - type: 0
     value:
@@ -204,6 +214,10 @@ MonoBehaviour:
     value:
       baseValue: 0
       modifiedValue: 0
+  rb: {fileID: 2190466993602200150}
+  inventory: {fileID: 11400000, guid: ba391aef18194db419840aa8245becc2, type: 2}
+  equipment: {fileID: 11400000, guid: 43835e75255697f44b8c11400e3fd98a, type: 2}
+  moveSpeed: 5
 --- !u!95 &2283677420253840375
 Animator:
   serializedVersion: 3

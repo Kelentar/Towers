@@ -56,35 +56,46 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Loader.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemDatabaseObject.cs" />
-    <Compile Include="Assets\UserInterface.cs" />
-    <Compile Include="Assets\ModifiableInt.cs" />
+    <Compile Include="Assets\Scripts\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\UserInterface.cs" />
+    <Compile Include="Assets\Scripts\ModifiableInt.cs" />
+    <Compile Include="Assets\Scripts\DialogueAnimator.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
-    <Compile Include="Assets\StaticInterface.cs" />
+    <Compile Include="Assets\Scripts\StaticInterface.cs" />
     <Compile Include="Assets\Scripts\TowerBase.cs" />
     <Compile Include="Assets\Scriptable Objects\Items\Scripts\ItemObject.cs" />
-    <Compile Include="Assets\DynamicInterface.cs" />
+    <Compile Include="Assets\Scripts\DynamicInterface.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\GroundItem.cs" />
+    <Compile Include="Assets\Scripts\GroundItem.cs" />
+    <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Lasers.cs" />
     <Compile Include="Assets\Scripts\EnemyList.cs" />
     <Compile Include="Assets\Scripts\Buttons.cs" />
+    <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scriptable Objects\Inventory\Scripts\InventoryObject.cs" />
+    <Compile Include="Assets\Scripts\DamageEnemy.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\TowerManager.cs" />
-    <Compile Include="Assets\IModifiers.cs" />
+    <Compile Include="Assets\Scripts\Sound.cs" />
+    <Compile Include="Assets\Scripts\IModifiers.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
+    <Compile Include="Assets\Scripts\MoveScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Graphics\Sprite\Allies\Font.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -96,6 +107,7 @@
     <None Include="Assets\Graphics\Sprite\Allies\Warrior\License.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Graphics\Sprite\Allies\License.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

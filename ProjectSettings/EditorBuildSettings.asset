@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Graphics/Sprite/Medieval Warrior Pack/Demo/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Menu.unity
+    guid: 5918d24981a70054f840a6890ef8e292
+  - enabled: 1
+    path: Assets/Scenes/Hub.unity
+    guid: e0ba3acb8fd9e2749b539ac7615b2ff4
+  - enabled: 1
+    path: Assets/Scenes/Mid.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Boos Fight.unity
+    guid: abcb174ec72c3804bbf05c7395fe0916
   m_configObjects: {}

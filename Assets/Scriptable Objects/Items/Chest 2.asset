@@ -19,5 +19,9 @@ MonoBehaviour:
   data:
     Name: 
     Id: 6
-    buffs: []
+    buffs:
+    - attribute: 3
+      value: 0
+      min: 20
+      max: 25
   boneName: []

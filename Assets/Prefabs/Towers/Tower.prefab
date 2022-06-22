@@ -77,8 +77,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1d1d2b6b97df92143a80ec0edbd3df69, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 2546757870057634713, guid: 7678f4900b1fd3b479ec78a2dda17ac1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,9 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7476ac476e89d8d49bd6f8a5669ee68a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 7257776200760423215, guid: e322c40cde351d44d8533cd4a22063b3, type: 3}
-  GizmozRangeX: 0
-  GizmozRangeY: 0
+  GizmozRangeX: 3
+  GizmozRangeY: 3
   shooting: {fileID: 7231110882906181097}
   lasers: {fileID: 5002497457981451098}
 --- !u!114 &2013734641250308323
@@ -120,7 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 7257776200760423215, guid: e322c40cde351d44d8533cd4a22063b3, type: 3}
   targetEnemy: {fileID: 4181363443465469955, guid: e322c40cde351d44d8533cd4a22063b3, type: 3}
-  range: 15
+  anim: {fileID: 88706744047940571}
+  range: 3
   enemyTag: Enemy
 --- !u!114 &7231110882906181097
 MonoBehaviour:
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf32dd178970504ab68cde3e29ed7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useBullets: 0
-  bulletPrefab: {fileID: 6133854936249807475, guid: 7658847e782c9d9489a27d373d78bcda, type: 3}
+  useBullets: 1
+  bulletPrefab: {fileID: 6133854936249807475, guid: 161211acca571d24486fe8907e8d60c7, type: 3}
   firePoint: {fileID: 3170989673668512345}
   snipe: {fileID: 2013734641250308323}
   fireRate: 2
@@ -266,7 +266,7 @@ Animator:
   m_GameObject: {fileID: 3537001831522267300}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07c6a52ebfde9ff439b8a0591404d29b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

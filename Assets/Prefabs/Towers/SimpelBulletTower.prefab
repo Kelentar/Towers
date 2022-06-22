@@ -69,14 +69,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 277716293556688946}
     m_Modifications:
-    - target: {fileID: 88706744047940571, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 07c6a52ebfde9ff439b8a0591404d29b, type: 2}
-    - target: {fileID: 2013734641250308323, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: range
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2158616066766727255, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -121,41 +113,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2647208266155286151, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2546757870057634713, guid: 7678f4900b1fd3b479ec78a2dda17ac1, type: 3}
     - target: {fileID: 3537001831522267300, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
       propertyPath: m_Name
       value: Tower
-      objectReference: {fileID: 0}
-    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: GizmozRangeX
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4929290136981816777, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: GizmozRangeY
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7231110882906181097, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: useBullets
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7231110882906181097, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}
-      propertyPath: useBullets_1_2
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0a79aab011d5e14795ad260f0e08cbb, type: 3}

@@ -10,12 +10,11 @@ public class Shooting : MonoBehaviour
 
     [Header("Ресурси")]
     public GameObject bulletPrefab;
+
     
+    public Transform firePoint;
 
-    public Transform firePoint; // Поінт для правої частини квадрата
-
-    public Target snipe; // Наведення
-
+    public Target snipe;
 
     [Header("Змінні")]
     public float fireRate = 1f;
@@ -26,11 +25,17 @@ public class Shooting : MonoBehaviour
     {
         if (useBullets == true)
         {
+            
             GameObject bulletGO = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Bullet bullet = bulletGO.GetComponent<Bullet>();
-
+            
             if (bullet != null)
+            {
+                
                 bullet.Seek(snipe.target);
+                
+            }
+                
 
         }
     }
